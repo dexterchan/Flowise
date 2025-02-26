@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  flowwise:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flowise
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_PATH=/opt/flowise
+    volumes:
+      - $HOME/.flowise:/opt/flowise
